@@ -7,11 +7,42 @@ public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
         // quiz
+        Book b1 = new BookRomance("b1", "a1");
+        Book b2 = new BookFiction("b1", "a2", "g1");
+        assertFalse(b1.equals(b2));
+
+        BookRomance br1 = new BookRomance("br1", "a2");
+        BookRomance br2 = new BookRomance(br1);
+        assertTrue(br1.equals(br2));
+        br2 = new BookRomance("br2", "a1");
+        assertFalse(br1.equals(br2));
+
+        BookFiction f1 = new BookFiction("f1", "a1", "g1");
+        BookFiction f2 = new BookFiction(f1);
+        assertTrue(f1.equals(f2));
+        f2 = new BookFiction("f2", "a2", "g2");
+        assertFalse(f1.equals(f2));
     }
 
     @Test
     public void catchTheBugInMovie() {
         // quiz
+        Movie m1 = new MovieAction("m1", "movie");
+        Movie m2 = new MovieComedy("m2", "movie2");
+        assertFalse(m1.equals(m2));
+
+        MovieAction m3 = new MovieAction("m3", "movie3");
+        MovieAction m4 = new MovieAction(m3);
+        assertTrue(m3.equals(m4));
+        m4 = new MovieAction("m4", "movie4");
+        assertFalse(m3.equals(m4));
+
+        MovieComedy m5 = new MovieComedy("m5", "movie5");
+        MovieComedy m6 = new MovieComedy(m5);
+        assertTrue(m5.equals(m6));
+        m6 = new MovieComedy("m6", "movie6");
+        assertFalse(m5.equals(m6));
+
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
